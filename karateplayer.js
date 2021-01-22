@@ -60,15 +60,15 @@ class KaratePlayer{
     
          //******* Punch Right & LEFT ********
          this.animations[this.STATE.PUNCH][this.FACING.RIGHT] 
-             = new Animator(this.spritesheet, 720,10, this.width,this.height ,3,.2,0,false, true);
+             = new Animator(this.spritesheet, 784,10, this.width,this.height ,2,.2,0,false, true);
          this.animations[this.STATE.PUNCH][this.FACING.LEFT]
-             = new Animator(this.spritesheet, 960,10, this.width,this.height ,3,.2,0,false, true);
+             = new Animator(this.spritesheet, 1024,10, this.width,this.height ,2,.2,0,false, true);
     
          //******* Kick Right & Left *******
          this.animations[this.STATE.KICK][this.FACING.RIGHT]
-             = new Animator(this.spritesheet, 1142,10, this.width,this.height ,7,.1,0,false, true);
+             = new Animator(this.spritesheet, 1142,10, this.width,this.height ,7,.08,0,false, true);
          this.animations[this.STATE.KICK][this.FACING.LEFT]
-             = new Animator(this.spritesheet, 1558,10, this.width,this.height ,7,.1,0,false, true);
+             = new Animator(this.spritesheet, 1558,10, this.width,this.height ,7,.08,0,false, true);
     
          //****** Duck Left & Right ******
          this.animations[this.STATE.DUCK][this.STATE.RIGHT]
@@ -113,10 +113,14 @@ class KaratePlayer{
         if(this.game.P && (this.facing === this.FACING.RIGHT)){
             this.facing = this.FACING.RIGHT;
             this.state = this.STATE.KICK;
+            this.y -= 3;
+            this.y += 3;
             action = true;
         } else if (this.game.P && (this.facing === this.FACING.LEFT)){
             this.facing = this.FACING.LEFT;
             this.state = this.STATE.KICK;
+            this.y -= 3;
+            this.y += 3;
             action = true;
         }
         //Punch
